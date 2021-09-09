@@ -16,15 +16,22 @@
     <form>
         <input type="text">
         <input type="submit" value="Submit">
-        <input type="radio" name="unit" id="metric" value="metric" checked>
-        <label for="metric">Celsius</label>
-        <input type="radio" name="unit" id="imperial" value="imperial">
-        <label for="imperial">Farenheit</label>
+        <button id="toggle-checkbox"><span id="celsius">º C</span> / <span id="farenheit">º F</span></button>
+        <input type="checkbox" name="toggle-units" id="toggle-units">
     </form>
     <div id="today">
         <h1 id="temp"></h1>
+        <p id="temp-range"></p>
+        <h3 id="description"></h3>
         <h2 id="city"></h2>
+        <div id="hourly">
+
+        </div>
     </div>
+    <div id="daily">
+
+    </div>
+
     <script src="main.js"></script>
 </body>
 
