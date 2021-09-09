@@ -2,6 +2,11 @@ body {
     font-family: 'Poppins';
 }
 
+#hourly, #daily {
+    display: flex;
+    overflow-x: scroll;
+}
+
 /* #toggle-units {
     display: none;
 } */
