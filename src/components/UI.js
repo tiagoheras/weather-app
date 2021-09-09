@@ -40,7 +40,7 @@ function displayData() {
 
     let data = weatherData[unit];
 
-    temp.innerText = data.current.temp;
+    temp.innerText = Math.round(data.current.temp) + 'º';
     tempRange.innerText = `${Math.round(data.daily[0].temp.min)}º - ${Math.round(data.daily[0].temp.max)}º`;
     description.innerText = formatDescription(data.current.weather[0].description);
     city.innerText = weatherData.city;
@@ -49,10 +49,18 @@ function displayData() {
     data.hourly.forEach(hour => {
         const hourDiv = document.createElement('div');
         hourDiv.className = 'hour';
-        hourDiv.innerHTML = `<p>${Math.round(hour.temp)}º</p><p>${hour.weather[0].main}</p>`
+        hourDiv.innerHTML = `<p>${hour.weather[0].main}</p><p>${Math.round(hour.temp)}º</p><img src="../../Frame 1.svg"/>`
         hourly.appendChild(hourDiv);
     })
 
+    daily.innerText = '';
+
+    data.daily.forEach(day => {
+        const dayDiv = document.createElement('div');
+        dayDiv.className = 'day';
+        dayDiv.innerHTML = `<p>${day.weather[0].main}</p><p>${Math.round(day.temp.min)}º-${Math.round(day.temp.max)}º</p><img src="../../Frame 1.svg"/>`
+        daily.appendChild(dayDiv);
+    })
 
 }
 
