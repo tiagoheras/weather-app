@@ -13,27 +13,66 @@
 </head>
 
 <body>
-    <form>
-        <input type="text">
-        <input type="submit" value="Submit">
-        <button id="toggle-checkbox"><span id="celsius">º C</span> / <span id="farenheit">º F</span></button>
-        <input type="checkbox" name="toggle-units" id="toggle-units">
-    </form>
+    <header>
+        <form>
+            <input type="text">
+            <button type="submit">Submit</button>
+            <button id="toggle-checkbox"><span id="celsius">º C</span> / <span id="farenheit">º F</span></button>
+            <input type="checkbox" name="toggle-units" id="toggle-units">
+        </form>
+    </header>
+
     <div id="today">
-        <h2 id="city"></h2>
-        <h1 id="temp"></h1>
-        <p id="temp-range"></p>
-        <h3 id="description"></h3>
-        <h1>Hourly</h1>
-        <div id="hourly">
-
+        <div id="main">
+            <h2 id="city"></h2>
+            <div class="temp-container">
+                <h1 id="temp"></h1>
+                <p id="temp-range"></p>
+            </div>
+            <h3 id="description"></h3>
         </div>
-    </div>
-    <h1>Daily</h1>
-    <div id="daily">
+
+        <div class="more-data">
+            <div class="data-container">
+                <p class="info-title">Feels Like</p>
+                <p class="info" id="feels_like"></p>
+            </div>
+            <div class="data-container">
+                <p class="info-title">Humidity</p>
+                <p class="info" id="humidity"></p>
+            </div>
+            <div class="data-container">
+                <p class="info-title">Sunrise</p>
+                <p class="info" id="sunrise"></p>
+            </div>
+            <div class="data-container">
+                <p class="info-title">Sunset</p>
+                <p class="info" id="sunset"></p>
+            </div>
+            <div class="data-container">
+                <p class="info-title">UV Index</p>
+                <p class="info" id="uvi"></p>
+            </div>
+            <div class="data-container">
+                <p class="info-title">Wind Speed</p>
+                <img id="vane" src="../vane.svg" alt="">
+                <p class="info" id="wind_speed"></p>
+            </div>
+        </div>
+        <div class="chronologic">
+            <h1>Hourly</h1>
+            <div class="data-list" id="hourly">
+            </div>
+        </div>
 
     </div>
+    <div class="chronologic">
+        <h1>Daily</h1>
+        <div class="data-list" id="daily">
+        </div>
 
+    </div>
+    <footer>Copyright &copy; 2021 Tiago Heras</footer>
     <script src="main.js"></script>
 </body>
 

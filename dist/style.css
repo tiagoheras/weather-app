@@ -1,12 +1,195 @@
-body {
+* {
     font-family: 'Poppins';
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+header {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #hourly, #daily {
     display: flex;
+    text-align: center;
+}
+
+#main {
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 90vh;
+    font-size: x-large;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-data {
+    display: grid;
+    width: 75%;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin: 30px auto;
+}
+
+.data-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.info-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#vane {
+    height: 20px;
+    width: auto;
+}
+
+.chronologic {
+    margin: 20px 10px;
+}
+
+.data-list {
+    padding: 20px 0;
+}
+
+#hourly {
     overflow-x: scroll;
 }
 
-/* #toggle-units {
+#daily {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.day {
+    width: 200px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 480px) {
+    h1 {
+        text-align: left;
+    }
+    .more-data {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        margin: 50px auto;
+        font-size: larger;
+    }
+    #daily {
+        flex-direction: row;
+    }
+    .day {
+        border-bottom: transparent;
+    }
+}
+
+#beams {
+    animation: rotate 5s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+#first {
+    animation: first-rain 1s linear infinite;
+    animation-delay: 1000ms;
+}
+
+#second {
+    animation: first-rain 1s linear infinite;
+    animation-delay: 750ms;
+}
+
+#third {
+    animation: first-rain 1s linear infinite;
+    animation-delay: 500ms;
+}
+
+#fourth {
+    animation: first-rain 1s linear infinite;
+    animation-delay: 250ms;
+}
+
+#fifth {
+    animation: first-rain 1s linear infinite;
+}
+
+#lightning {
+    animation: lightning 5s linear infinite;
+}
+
+@keyframes lightning {
+    0% {
+        opacity: 1;
+    }
+    5% {
+        opacity: 0;
+    }
+    6% {
+        opacity: 1;
+    }
+    15% {
+        opacity: 0;
+    }
+    16% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    31% {
+        opacity: 1;
+    }
+}
+
+@keyframes first-rain {
+    from {
+        transform: translateY(0px);
+    }
+    70% {
+        transform: translateY(35px);
+    }
+    to {
+        transform: translateY(35px);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#toggle-units {
     display: none;
-} */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
